@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="single">
+  <header class="single-header">
+    <h1>{{ .Title }}</h1>
+    <div class="meta">
+      <time>{{ .Date.Format "2006년 1월 2일" }}</time>
+      {{ if .Params.subjects }}
+        {{ range .Params.subjects }}<span class="tag">{{ . }}</span>{{ end }}
+      {{ end }}
+    </div>
+    {{ if .Params.status }}<p class="status">진행 상태: {{ .Params.status }}</p>{{ end }}
+  </header>
+
+  {{ if .Params.toc }}
+  <nav class="toc">
+    <strong>목차</strong>
+    {{ .TableOfContents }}
+  </nav>
+  {{ end }}
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

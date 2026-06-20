@@ -1,0 +1,34 @@
+baseURL = "https://silvermedal3776-alt.github.io/taesawei-portfolio/"
+languageCode = "ko-kr"
+title = "소백의 연구노트"
+theme = ""
+
+[params]
+  description = "물리, 텍스트마이닝, 문학을 넘나드는 학업 포트폴리오"
+  author = "소백"
+
+[menu]
+  [[menu.main]]
+    name = "홈"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "연구 프로젝트"
+    url = "/research/"
+    weight = 2
+  [[menu.main]]
+    name = "글"
+    url = "/posts/"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+[taxonomies]
+  tag = "tags"
+  subject = "subjects"
