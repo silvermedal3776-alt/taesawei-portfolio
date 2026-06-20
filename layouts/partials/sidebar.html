@@ -1,0 +1,45 @@
+<nav class="sidebar" aria-label="주요 메뉴">
+  <a class="sidebar-brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+
+  <ul class="sidebar-menu">
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="{{ "/research/" | relURL }}">연구 프로젝트</a>
+    </li>
+
+    <li class="sidebar-item has-children">
+      <a class="sidebar-link" href="{{ "/study/" | relURL }}">학습활동</a>
+      <ul class="sidebar-submenu">
+        <li><a href="{{ "/study/performance/" | relURL }}">수행평가</a></li>
+        <li><a href="{{ "/study/club/" | relURL }}">동아리</a></li>
+        <li><a href="{{ "/study/etc/" | relURL }}">기타활동</a></li>
+      </ul>
+    </li>
+
+    <li class="sidebar-item has-children">
+      <a class="sidebar-link" href="{{ "/timelapse/" | relURL }}">타임랩스</a>
+      <ul class="sidebar-submenu">
+        <li><a href="{{ "/timelapse/study-video/" | relURL }}">공부영상</a></li>
+        <li><a href="{{ "/timelapse/etc-video/" | relURL }}">기타영상</a></li>
+      </ul>
+    </li>
+
+    <li class="sidebar-item has-children">
+      <a class="sidebar-link" href="{{ "/hobby/" | relURL }}">취미활동</a>
+      <ul class="sidebar-submenu">
+        <li><a href="{{ "/hobby/poem/" | relURL }}">시</a></li>
+        <li><a href="{{ "/hobby/novel/" | relURL }}">소설</a></li>
+        <li><a href="{{ "/hobby/review/" | relURL }}">독후감</a></li>
+        <li><a href="{{ "/hobby/music/" | relURL }}">음악감상</a></li>
+        <li><a href="{{ "/hobby/etc/" | relURL }}">기타활동</a></li>
+      </ul>
+    </li>
+
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="{{ "/posts/" | relURL }}">글</a>
+    </li>
+  </ul>
+</nav>
+
+<button class="sidebar-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>

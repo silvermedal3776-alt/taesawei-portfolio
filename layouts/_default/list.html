@@ -1,10 +1,26 @@
 {{ define "main" }}
 <header class="list-header">
   <h1>{{ .Title }}</h1>
+  {{ if .Content }}
+  <div class="list-intro">{{ .Content }}</div>
+  {{ end }}
 </header>
 
+{{ $subsections := .Sections }}
+{{ $pages := .Pages.ByDate.Reverse }}
+
+{{ if $subsections }}
 <div class="card-grid">
-  {{ range .Pages.ByDate.Reverse }}
+  {{ range $subsections }}
+  <a class="card" href="{{ .RelPermalink }}">
+    <h3>{{ .Title }}</h3>
+    <p>{{ len .Pages }}개의 글</p>
+  </a>
+  {{ end }}
+</div>
+{{ else if $pages }}
+<div class="card-grid">
+  {{ range $pages }}
   <a class="card" href="{{ .RelPermalink }}">
     <h3>{{ .Title }}</h3>
     {{ if .Params.subjects }}
@@ -17,4 +33,7 @@
   </a>
   {{ end }}
 </div>
+{{ else }}
+<p class="empty-state">아직 작성된 글이 없습니다.</p>
+{{ end }}
 {{ end }}
